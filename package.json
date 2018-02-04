@@ -1,0 +1,17 @@
+{
+  "name": "basic-dev-server",
+  "version": "1.0.0",
+  "description": "A basic Node Express server for development",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "start": "nodemon server.js"
+  },
+  "author": "Nicolas Richel",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.16.2",
+    "minimist": "^1.2.0",
+    "nodemon": "^1.14.11"
+  }
+}
