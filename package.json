@@ -1,6 +1,6 @@
 {
   "name": "basic-dev-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic Node Express server for development",
   "main": "server.js",
   "scripts": {
