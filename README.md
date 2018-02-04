@@ -13,8 +13,9 @@ To use this dev server you need to have [Node.js](https://nodejs.org/en/download
 installed on your machine.  
 Then clone this repository in the directory of your choice and launch : `npm install`
 in that directory.  
-To run the server : `node run start`, the server should now be up on localhost and
-listening on port `8081` (default).  
+
+To run the server : `npm run start`.  
+The server should now be up on localhost and listening on port `8081` (default).  
 **Note :** you can change the port on which the server will be listening by changing
 the value of the `port` constant in `server.js`.
 
