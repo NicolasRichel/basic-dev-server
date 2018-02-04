@@ -9,6 +9,7 @@
   },
   "author": "Nicolas Richel",
   "license": "GPL-3.0",
+  "repository": "github:NicolasRichel/basic-dev-server",
   "dependencies": {
     "express": "^4.16.2",
     "minimist": "^1.2.0",
