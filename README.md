@@ -65,9 +65,11 @@ npm start <api-name>
 ```
 
 Here `<api-name>` is the name of the file that contains the API definition.
-For example if my `/src/apis` directory contains a file named `my-awesome-api.js`
+For example, if my `/src/apis` directory contains a file named `my-awesome-api.js`
 with the definition of my awesome API, then I would load this API with the
-following command : `npm start my-awesome-api`.
+following command : `npm start my-awesome-api`.  
+It is also possible to load multiple APIs at the same time : `npm start api1 api2 ...`.  
+If no API is given on the command line, then the `default-api` is loaded.
 
 
 ## Contributing
