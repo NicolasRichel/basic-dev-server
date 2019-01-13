@@ -6,7 +6,7 @@ module.exports = (server, api)  => {
 		require(`./apis/${api}`)(server);
 		console.log(`API [ ${api} ] is loaded.`);
 	} catch (error) {
-		console.log(`Failed to load API [ ${api} ].`);
+		console.warn(`Failed to load API [ ${api} ].`);
 	}
 
 };
