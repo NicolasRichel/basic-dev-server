@@ -1,12 +1,14 @@
 // Exports API initialization function
-module.exports = (server, api)  => {
+module.exports = (server, apis)  => {
 
-	try {
-		// Try to load the given API
-		require(`./apis/${api}`)(server);
-		console.log(`API [ ${api} ] is loaded.`);
-	} catch (error) {
-		console.warn(`Failed to load API [ ${api} ].`);
-	}
+	apis.forEach( api => {
+		try {
+			// Try to load the given API
+			require(`./api/${api}`)(server);
+			console.log(`API [ ${api} ] is loaded.`);
+		} catch (error) {
+			console.warn(`Failed to load API [ ${api} ].`);
+		}
+	});
 
 };
