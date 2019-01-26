@@ -1,6 +1,9 @@
 node_modules/
 
-src/apis/**
-!src/apis/default-api.js
+src/api/**
+!src/api/default-api.js
+
+src/wss/**
+!src/wss/default-wss.js
 
 src/repository/
