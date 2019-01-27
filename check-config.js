@@ -16,6 +16,11 @@ module.exports = (config) => {
       checkUp.message = 'No port specified for API configuration.';
       return checkUp;
     }
+    if (config.api.port && !(typeof config.api.port === 'number')) {
+      checkUp.isOk = false;
+      checkUp.message = 'The API port must be a number.';
+      return checkUp;
+    }
     if (!config.api.list || config.api.list.length===0) {
       checkUp.isOk = false;
       checkUp.message = 'No API specified for API configuration.';

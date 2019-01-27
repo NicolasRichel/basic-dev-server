@@ -7,8 +7,8 @@
   "repository": "github:NicolasRichel/basic-dev-server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "node test/run-tests.js"
   },
   "dependencies": {
     "express": "^4.16.4",
