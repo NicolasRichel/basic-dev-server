@@ -31,7 +31,7 @@ your API and test some aspects of its behavior before you start a project.
 
 ### Create an API
 
-To create a new API, just create a new JS file in the `/src/apis` directory.  
+To create a new API, just create a new JS file in the `/src/http` directory.  
 This file will contain your API implemention, it must exports a function that
 take a `server` parameter and that defines your API as in an Express app.  
 Below is an example for `default-api.js` :
@@ -58,36 +58,37 @@ so that you can immediately test it (e.g in your favorite browser).
 
 ### Create a Configuration
 
-You control the port on which the server is listening as well as the APIs that are 
+You control the port on which the server is listening as well as the API that is 
 loaded by providing a configuration file.  
-Here is an example of such a configuration (see [config.js](./config.js)) :
+Here is an example of such a configuration (see [default-conf.js](./conf/default-conf.js)) :
 
 ```js
-// Default Config
+// Default HTTP Config
 module.exports = {
-  api: {
+  http: {
     port: 8081,
-    list: ['default-api']
+    api: 'default-api'
   }
 };
 ```
 
- - `api.port`: port on which the server will be listening for incoming requests
- - `api.list`: list of APIs to load
+ - `http.port`: port on which the server will be listening for incoming requests
+ - `http.api`: list of APIs to load
 
 For example if I just defined my new awesome API in a file named `my-awesome-api.js`
-and put it in the `/src/api` directory, then I would load this API by adding the
-string `'my-awesome-api'` to the `api.list` array.
+and put it in the `/src/http` directory, then I would load this API by adding the
+string `'my-awesome-api'` to the `http.api` array.
 
 ### Use a Configuration
 
 Once you created your configuration you can tell the server to use it at startup
 with the following command : `npm start <my-config>`.
 
-Here `<my-config>` is the name of the configuration file.  
+Here `<my-config>` is the name of the configuration file.
+The server will look into the `conf/` directory for the specified config file.  
 **Note :**
  - if no configuration file is specified the default configuration defined in
-  [config.js](./config.js) is loaded
+  [conf/default-conf.js](./conf/default-conf.js) is loaded
  - only one configuration can be loaded at a time
 
 

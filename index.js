@@ -1,15 +1,15 @@
 // Load & Check configuration
 const configFile = process.argv.splice(2)[0];
-const config = require(`./${configFile ? configFile : 'config'}`);
-const checkUp = require('./check-config')(config);
+const config = require(`./conf/${configFile ? configFile : 'default-conf'}`);
+const v = require('./config-validator').validate(config);
 
-if (checkUp.isOk) {
-  if (config.api) {
-    require('./apiServer').start(config.api);
+if (v.ok) {
+  if (config.http) {
+    require('./src/http-server').start( config.http );
   }
-  if (config.wss) {
-    require('./wssServer').start(config.wss);
+  if (config.websocket) {
+    require('./src/websocket-server').start( config.websocket );
   }
 } else {
-  console.error(`Config Error: ${checkUp.message}`);
+  console.error(`Config Error: ${v.message}`);
 }
